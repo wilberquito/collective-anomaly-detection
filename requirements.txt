@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+openai==0.28.0
+tqdm
+sentence-transformers
+torch
+umap-learn
+lexrank

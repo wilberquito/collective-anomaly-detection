@@ -31,10 +31,10 @@ def data2timeseries(data: pd.DataFrame) -> pd.DataFrame:
         .resample("D") \
         .count()
 
-    agg_ts = pd.DataFrame(columns=["datetime", "timestamp", "value"])
+    agg_ts = pd.DataFrame(columns=["date", "timestamp", "value"])
     agg_ts["value"] = ts["text"].values
-    agg_ts["datetime"] = ts.index.values
-    agg_ts["timestamp"] = agg_ts["datetime"].astype(int)
+    agg_ts["date"] = ts.index.values
+    agg_ts["timestamp"] = agg_ts["date"].astype(int)
     agg_ts["timestamp"] = agg_ts["timestamp"].div(10**9)
 
     return agg_ts
